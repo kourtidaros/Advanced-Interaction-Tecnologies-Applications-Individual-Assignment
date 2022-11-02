@@ -5,14 +5,14 @@ Capture cam;
 MultiMarker nya;
 
 void setup() {
-  size(1500,1000,P3D);
+  size(640,480,P3D);
   
   println(MultiMarker.VERSION);
-  cam=new Capture(this,1080,720);
+  cam=new Capture(this,640,480);
   nya=new MultiMarker(this,width,height,"../simpleLite/data/camera_para.dat",NyAR4PsgConfig.CONFIG_PSG);
   nya.addARMarker("../simpleLite/data/patt.hiro",80);
   cam.start();
-   img = loadImage("batmanos.jpg");
+   img = loadImage("batmanos.png");
 }
 
 void draw()
