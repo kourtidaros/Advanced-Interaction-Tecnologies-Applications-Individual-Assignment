@@ -9,8 +9,8 @@ void setup() {
   
   println(MultiMarker.VERSION);
   cam=new Capture(this,1080,720);
-  nya=new MultiMarker(this,width,height,"../../data/camera_para.dat",NyAR4PsgConfig.CONFIG_PSG);
-  nya.addARMarker("../../data/patt.hiro",-80);
+  nya=new MultiMarker(this,width,height,"../simpleLite/data/camera_para.dat",NyAR4PsgConfig.CONFIG_PSG);
+  nya.addARMarker("../simpleLite/data/patt.hiro",80);
   cam.start();
    img = loadImage("batmanos.jpg");
 }
@@ -24,6 +24,8 @@ void draw()
   nya.detect(cam);
  
   nya.drawBackground(cam);
+  
+
   if((!nya.isExist(0))){
     return;
   }
