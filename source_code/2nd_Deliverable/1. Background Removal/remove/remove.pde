@@ -7,7 +7,7 @@ PImage backgroundImage;
 PImage backgroundReplace;
 
 
-float threshold = 70;
+float threshold = 30;
 
 void setup() {
   size(768, 426);
@@ -25,6 +25,7 @@ void captureEvent(Capture video) {
 
 
 void draw() {
+  //threshold = map(mouseX, 0, width, 5, 50);
 
   loadPixels();
   video.loadPixels(); 
@@ -43,10 +44,10 @@ void draw() {
       float r1 = red(fgColor);
       float b1 = blue(fgColor);
       float g1 = green(fgColor);
-     // float r2 = red(bgColor);
-      //float b2 = blue(bgColor);
+      float r2 = red(bgColor);
+      float b2 = blue(bgColor);
       float g2 = green(bgColor);
-      float diff = dist(r1, b1, g1, g2);
+      float diff = dist(r1, b1, g1,r2, b2 , g2);
 
 
       if (diff < threshold) {
